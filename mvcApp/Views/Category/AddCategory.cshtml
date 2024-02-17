@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Category
+@{
+    ViewData["Title"] = "Add Category";
+}
+ <div class="container">
+     <h2> Add Category</h2>
+     <div class="row d-flex justify-content-center">
+     @*  <div asp-validation-summary="All"></div>*@
+         <div class="col-12">
+             <form method="post">
+                 <div class="row mb-1">
+                     <label asp-for="Name"></label>
+                     <input type="text" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+
+                </div>
+                <div class="row mb-2">
+                    <label asp-for="DisplayOrder"></label>
+                    <input type="text" asp-for="DisplayOrder" class="form-control" />
+                    <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+                </div>
+                <div >
+                    <button type="submit" class="btn btn-primary mb-2" style="width:30%">Submit</button>
+                </div>
+                <a style="width:30%" asp-controller="Category" asp-action="Index" class="btn btn-dark">Back</a>
+
+             </form>
+         </div>
+     </div>
+ </div>
+
+ @section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+      }
+}
